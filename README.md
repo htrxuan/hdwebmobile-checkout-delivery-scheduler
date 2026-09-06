@@ -1,4 +1,4 @@
-# HDWebmobile Delivery Date & Time Slot Picker
+# HDWebmobile Checkout Delivery Scheduler
 
 Let customers pick a delivery date and time slot at checkout. Works correctly on both classic and block-based Checkout.
 
@@ -8,7 +8,7 @@ Let customers pick a delivery date and time slot at checkout. Works correctly on
 
 ## Description
 
-HDWebmobile Delivery Date & Time Slot Picker adds a "Delivery date" and "Delivery time slot" dropdown to checkout, so shoppers can choose exactly when they want their order delivered. Merchants control which weekdays are never available (e.g. no Sunday delivery), block out specific dates (holidays, stock-take days), and set how many days of lead time are needed before the first available delivery date.
+HDWebmobile Checkout Delivery Scheduler adds a "Delivery date" and "Delivery time slot" dropdown to checkout, so shoppers can choose exactly when they want their order delivered. Merchants control which weekdays are never available (e.g. no Sunday delivery), block out specific dates (holidays, stock-take days), and set how many days of lead time are needed before the first available delivery date.
 
 Many delivery-scheduling plugins were built only for the classic WooCommerce checkout and silently fail to save the customer's choice on the newer block-based Checkout, since the two use entirely separate rendering systems. This plugin registers its fields using WooCommerce's own native Checkout Fields API for the block-based Checkout, and a traditional hook-based implementation for classic checkout — both paths save to the same order data, so the chosen date and time slot always show up correctly in the admin order screen and order emails, regardless of which checkout your store uses.
 

@@ -71,7 +71,7 @@ final class HDDTS_Core
         ?>
         <div class="notice notice-error is-dismissible">
             <p>
-                <?php esc_html_e('HDWebmobile Delivery Date & Time Slot Picker requires WooCommerce to be installed and active. The plugin has been deactivated.', 'hdwebmobile-delivery-date-time-slot'); ?>
+                <?php esc_html_e('HDWebmobile Checkout Delivery Scheduler requires WooCommerce to be installed and active. The plugin has been deactivated.', 'hdwebmobile-checkout-delivery-scheduler'); ?>
             </p>
         </div>
         <?php

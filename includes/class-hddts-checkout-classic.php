@@ -54,14 +54,14 @@ class HDDTS_Checkout_Classic
             'type'     => 'select',
             'label'    => $options['date_field_label'],
             'required' => true,
-            'options'  => array('' => esc_html__('Select a date&hellip;', 'hdwebmobile-delivery-date-time-slot')) + self::pairs($dates),
+            'options'  => array('' => esc_html__('Select a date&hellip;', 'hdwebmobile-checkout-delivery-scheduler')) + self::pairs($dates),
         ), $checkout->get_value(HDDTS_Checkout_Blocks::DATE_FIELD_ID));
 
         woocommerce_form_field(HDDTS_Checkout_Blocks::SLOT_FIELD_ID, array(
             'type'     => 'select',
             'label'    => $options['slot_field_label'],
             'required' => true,
-            'options'  => array('' => esc_html__('Select a time slot&hellip;', 'hdwebmobile-delivery-date-time-slot')) + self::pairs($slots),
+            'options'  => array('' => esc_html__('Select a time slot&hellip;', 'hdwebmobile-checkout-delivery-scheduler')) + self::pairs($slots),
         ), $checkout->get_value(HDDTS_Checkout_Blocks::SLOT_FIELD_ID));
 
         echo '</div>';
@@ -84,11 +84,11 @@ class HDDTS_Checkout_Classic
         $slot = isset($_POST[HDDTS_Checkout_Blocks::SLOT_FIELD_ID]) ? sanitize_text_field(wp_unslash($_POST[HDDTS_Checkout_Blocks::SLOT_FIELD_ID])) : '';
 
         if (!HDDTS_Availability::is_valid_date($date)) {
-            wc_add_notice(__('Please choose a valid delivery date.', 'hdwebmobile-delivery-date-time-slot'), 'error');
+            wc_add_notice(__('Please choose a valid delivery date.', 'hdwebmobile-checkout-delivery-scheduler'), 'error');
         }
 
         if (!HDDTS_Availability::is_valid_slot($slot)) {
-            wc_add_notice(__('Please choose a valid delivery time slot.', 'hdwebmobile-delivery-date-time-slot'), 'error');
+            wc_add_notice(__('Please choose a valid delivery time slot.', 'hdwebmobile-checkout-delivery-scheduler'), 'error');
         }
     }
 

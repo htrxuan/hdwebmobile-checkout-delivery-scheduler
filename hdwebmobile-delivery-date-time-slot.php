@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: HDWebmobile Delivery Date & Time Slot Picker
+ * Plugin Name: HDWebmobile Checkout Delivery Scheduler
  * Plugin URI: https://hdwebmobile.com/plugins/hdwebmobile-delivery-date-time-slot/
  * Description: Lets customers pick a delivery date and time slot at checkout, with blocked weekdays and blackout dates. Works correctly on both classic and block-based Checkout.
  * Version: 1.0.0
@@ -9,7 +9,7 @@
  * Author URI: https://hdwebmobile.com/
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: hdwebmobile-delivery-date-time-slot
+ * Text Domain: hdwebmobile-checkout-delivery-scheduler
  * Domain Path: /languages
  * Requires Plugins: woocommerce
  * Requires PHP: 7.4
@@ -43,7 +43,7 @@ add_action('plugins_loaded', function () {
 });
 
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), function ($links) {
-    $donate_link = '<a href="https://paypal.me/htrxuan/20" target="_blank" rel="noopener noreferrer">' . esc_html__('Donate', 'hdwebmobile-delivery-date-time-slot') . '</a>';
+    $donate_link = '<a href="https://paypal.me/htrxuan/20" target="_blank" rel="noopener noreferrer">' . esc_html__('Donate', 'hdwebmobile-checkout-delivery-scheduler') . '</a>';
     array_unshift($links, $donate_link);
     return $links;
 });

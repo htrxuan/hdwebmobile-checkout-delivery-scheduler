@@ -29,7 +29,7 @@ class HDDTS_Admin
     public function register_hub_tabs($tabs)
     {
         $tabs['delivery-date-time-slot'] = array(
-            'label'  => __('Delivery Date & Time Slot', 'hdwebmobile-delivery-date-time-slot'),
+            'label'  => __('Checkout Delivery Scheduler', 'hdwebmobile-checkout-delivery-scheduler'),
             'order'  => 40,
             'render' => array($this, 'render_settings_page'),
         );
@@ -39,7 +39,7 @@ class HDDTS_Admin
     public function render_settings_page()
     {
         ?>
-        <p><?php esc_html_e('Let customers pick a delivery date and time slot at checkout. Works correctly on both classic and block-based Checkout.', 'hdwebmobile-delivery-date-time-slot'); ?></p>
+        <p><?php esc_html_e('Let customers pick a delivery date and time slot at checkout. Works correctly on both classic and block-based Checkout.', 'hdwebmobile-checkout-delivery-scheduler'); ?></p>
         <form method="post" action="options.php">
             <?php
             settings_fields('hddts_option_group');
@@ -64,19 +64,19 @@ class HDDTS_Admin
 
         add_settings_section(
             'hddts_section_general',
-            __('General', 'hdwebmobile-delivery-date-time-slot'),
+            __('General', 'hdwebmobile-checkout-delivery-scheduler'),
             '__return_false',
             'hddts-settings'
         );
 
-        add_settings_field('enabled', __('Enable Delivery Date & Time Slot', 'hdwebmobile-delivery-date-time-slot'), array($this, 'enabled_callback'), 'hddts-settings', 'hddts_section_general');
-        add_settings_field('lead_days', __('Minimum days ahead', 'hdwebmobile-delivery-date-time-slot'), array($this, 'lead_days_callback'), 'hddts-settings', 'hddts_section_general');
-        add_settings_field('days_ahead', __('Days to offer', 'hdwebmobile-delivery-date-time-slot'), array($this, 'days_ahead_callback'), 'hddts-settings', 'hddts_section_general');
-        add_settings_field('blocked_weekdays', __('Blocked weekdays', 'hdwebmobile-delivery-date-time-slot'), array($this, 'blocked_weekdays_callback'), 'hddts-settings', 'hddts_section_general');
-        add_settings_field('blackout_dates', __('Blackout dates', 'hdwebmobile-delivery-date-time-slot'), array($this, 'blackout_dates_callback'), 'hddts-settings', 'hddts_section_general');
-        add_settings_field('time_slots', __('Time slots', 'hdwebmobile-delivery-date-time-slot'), array($this, 'time_slots_callback'), 'hddts-settings', 'hddts_section_general');
-        add_settings_field('date_field_label', __('"Delivery date" field label', 'hdwebmobile-delivery-date-time-slot'), array($this, 'date_field_label_callback'), 'hddts-settings', 'hddts_section_general');
-        add_settings_field('slot_field_label', __('"Delivery time slot" field label', 'hdwebmobile-delivery-date-time-slot'), array($this, 'slot_field_label_callback'), 'hddts-settings', 'hddts_section_general');
+        add_settings_field('enabled', __('Enable Checkout Delivery Scheduler', 'hdwebmobile-checkout-delivery-scheduler'), array($this, 'enabled_callback'), 'hddts-settings', 'hddts_section_general');
+        add_settings_field('lead_days', __('Minimum days ahead', 'hdwebmobile-checkout-delivery-scheduler'), array($this, 'lead_days_callback'), 'hddts-settings', 'hddts_section_general');
+        add_settings_field('days_ahead', __('Days to offer', 'hdwebmobile-checkout-delivery-scheduler'), array($this, 'days_ahead_callback'), 'hddts-settings', 'hddts_section_general');
+        add_settings_field('blocked_weekdays', __('Blocked weekdays', 'hdwebmobile-checkout-delivery-scheduler'), array($this, 'blocked_weekdays_callback'), 'hddts-settings', 'hddts_section_general');
+        add_settings_field('blackout_dates', __('Blackout dates', 'hdwebmobile-checkout-delivery-scheduler'), array($this, 'blackout_dates_callback'), 'hddts-settings', 'hddts_section_general');
+        add_settings_field('time_slots', __('Time slots', 'hdwebmobile-checkout-delivery-scheduler'), array($this, 'time_slots_callback'), 'hddts-settings', 'hddts_section_general');
+        add_settings_field('date_field_label', __('"Delivery date" field label', 'hdwebmobile-checkout-delivery-scheduler'), array($this, 'date_field_label_callback'), 'hddts-settings', 'hddts_section_general');
+        add_settings_field('slot_field_label', __('"Delivery time slot" field label', 'hdwebmobile-checkout-delivery-scheduler'), array($this, 'slot_field_label_callback'), 'hddts-settings', 'hddts_section_general');
     }
 
     public static function get_options()
@@ -119,8 +119,8 @@ class HDDTS_Admin
             ? self::sanitize_text_lines($input['time_slots'])
             : array();
 
-        $new_input['date_field_label'] = isset($input['date_field_label']) ? sanitize_text_field($input['date_field_label']) : __('Delivery date', 'hdwebmobile-delivery-date-time-slot');
-        $new_input['slot_field_label'] = isset($input['slot_field_label']) ? sanitize_text_field($input['slot_field_label']) : __('Delivery time slot', 'hdwebmobile-delivery-date-time-slot');
+        $new_input['date_field_label'] = isset($input['date_field_label']) ? sanitize_text_field($input['date_field_label']) : __('Delivery date', 'hdwebmobile-checkout-delivery-scheduler');
+        $new_input['slot_field_label'] = isset($input['slot_field_label']) ? sanitize_text_field($input['slot_field_label']) : __('Delivery time slot', 'hdwebmobile-checkout-delivery-scheduler');
 
         return $new_input;
     }
@@ -159,7 +159,7 @@ class HDDTS_Admin
         printf(
             '<input type="number" min="0" name="hddts_options[lead_days]" value="%s" class="small-text" /> %s',
             esc_attr($options['lead_days']),
-            esc_html__('days from today before the earliest offered delivery date.', 'hdwebmobile-delivery-date-time-slot')
+            esc_html__('days from today before the earliest offered delivery date.', 'hdwebmobile-checkout-delivery-scheduler')
         );
     }
 
@@ -169,7 +169,7 @@ class HDDTS_Admin
         printf(
             '<input type="number" min="1" name="hddts_options[days_ahead]" value="%s" class="small-text" /> %s',
             esc_attr($options['days_ahead']),
-            esc_html__('valid delivery dates to offer in the dropdown.', 'hdwebmobile-delivery-date-time-slot')
+            esc_html__('valid delivery dates to offer in the dropdown.', 'hdwebmobile-checkout-delivery-scheduler')
         );
     }
 
@@ -177,13 +177,13 @@ class HDDTS_Admin
     {
         $options = self::get_options();
         $days = array(
-            0 => __('Sunday', 'hdwebmobile-delivery-date-time-slot'),
-            1 => __('Monday', 'hdwebmobile-delivery-date-time-slot'),
-            2 => __('Tuesday', 'hdwebmobile-delivery-date-time-slot'),
-            3 => __('Wednesday', 'hdwebmobile-delivery-date-time-slot'),
-            4 => __('Thursday', 'hdwebmobile-delivery-date-time-slot'),
-            5 => __('Friday', 'hdwebmobile-delivery-date-time-slot'),
-            6 => __('Saturday', 'hdwebmobile-delivery-date-time-slot'),
+            0 => __('Sunday', 'hdwebmobile-checkout-delivery-scheduler'),
+            1 => __('Monday', 'hdwebmobile-checkout-delivery-scheduler'),
+            2 => __('Tuesday', 'hdwebmobile-checkout-delivery-scheduler'),
+            3 => __('Wednesday', 'hdwebmobile-checkout-delivery-scheduler'),
+            4 => __('Thursday', 'hdwebmobile-checkout-delivery-scheduler'),
+            5 => __('Friday', 'hdwebmobile-checkout-delivery-scheduler'),
+            6 => __('Saturday', 'hdwebmobile-checkout-delivery-scheduler'),
         );
         foreach ($days as $value => $label) {
             printf(
@@ -200,9 +200,9 @@ class HDDTS_Admin
         $options = self::get_options();
         printf(
             '<textarea name="hddts_options[blackout_dates]" rows="4" class="regular-text" placeholder="%s">%s</textarea><p class="description">%s</p>',
-            esc_attr__('2026-12-25', 'hdwebmobile-delivery-date-time-slot'),
+            esc_attr__('2026-12-25', 'hdwebmobile-checkout-delivery-scheduler'),
             esc_textarea(implode("\n", $options['blackout_dates'])),
-            esc_html__('One date per line, in YYYY-MM-DD format (e.g. holidays).', 'hdwebmobile-delivery-date-time-slot')
+            esc_html__('One date per line, in YYYY-MM-DD format (e.g. holidays).', 'hdwebmobile-checkout-delivery-scheduler')
         );
     }
 
@@ -212,7 +212,7 @@ class HDDTS_Admin
         printf(
             '<textarea name="hddts_options[time_slots]" rows="4" class="regular-text">%s</textarea><p class="description">%s</p>',
             esc_textarea(implode("\n", $options['time_slots'])),
-            esc_html__('One time slot per line (e.g. "9:00 AM - 12:00 PM"). Offered on every valid date.', 'hdwebmobile-delivery-date-time-slot')
+            esc_html__('One time slot per line (e.g. "9:00 AM - 12:00 PM"). Offered on every valid date.', 'hdwebmobile-checkout-delivery-scheduler')
         );
     }
 

@@ -95,7 +95,7 @@ class HDDTS_Checkout_Blocks
     public function validate_date($value)
     {
         if (!HDDTS_Availability::is_valid_date($value)) {
-            return new \WP_Error('hddts_invalid_date', __('Please choose a valid delivery date.', 'hdwebmobile-delivery-date-time-slot'));
+            return new \WP_Error('hddts_invalid_date', __('Please choose a valid delivery date.', 'hdwebmobile-checkout-delivery-scheduler'));
         }
         return true;
     }
@@ -103,7 +103,7 @@ class HDDTS_Checkout_Blocks
     public function validate_slot($value)
     {
         if (!HDDTS_Availability::is_valid_slot($value)) {
-            return new \WP_Error('hddts_invalid_slot', __('Please choose a valid delivery time slot.', 'hdwebmobile-delivery-date-time-slot'));
+            return new \WP_Error('hddts_invalid_slot', __('Please choose a valid delivery time slot.', 'hdwebmobile-checkout-delivery-scheduler'));
         }
         return true;
     }
