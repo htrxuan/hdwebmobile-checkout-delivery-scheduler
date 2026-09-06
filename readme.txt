@@ -33,7 +33,7 @@ Many delivery-scheduling plugins were built only for the classic WooCommerce che
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/hdwebmobile-delivery-date-time-slot` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/hdwebmobile-checkout-delivery-scheduler` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress. WooCommerce must already be installed and active.
 3. Go to **WooCommerce > Delivery Date & Time Slot** to configure lead time, blocked weekdays, blackout dates, and time slots.
 

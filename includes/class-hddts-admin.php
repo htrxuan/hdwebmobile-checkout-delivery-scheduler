@@ -28,7 +28,7 @@ class HDDTS_Admin
 
     public function register_hub_tabs($tabs)
     {
-        $tabs['delivery-date-time-slot'] = array(
+        $tabs['checkout-delivery-scheduler'] = array(
             'label'  => __('Checkout Delivery Scheduler', 'hdwebmobile-checkout-delivery-scheduler'),
             'order'  => 40,
             'render' => array($this, 'render_settings_page'),

@@ -2,7 +2,7 @@
 
 Let customers pick a delivery date and time slot at checkout. Works correctly on both classic and block-based Checkout.
 
-- **WordPress.org:** https://wordpress.org/plugins/hdwebmobile-delivery-date-time-slot/
+- **WordPress.org:** https://wordpress.org/plugins/hdwebmobile-checkout-delivery-scheduler/
 - **Requires:** WordPress 6.9+, WooCommerce, PHP 7.4+
 - **License:** GPLv2 or later
 
@@ -27,7 +27,7 @@ Many delivery-scheduling plugins were built only for the classic WooCommerce che
 Standard WordPress plugin structure:
 
 ```
-hdwebmobile-delivery-date-time-slot.php    Bootstrap
+hdwebmobile-checkout-delivery-scheduler.php    Bootstrap
 includes/class-hddts-activator.php
 includes/class-hddts-admin.php
 includes/class-hddts-availability.php

@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: HDWebmobile Checkout Delivery Scheduler
- * Plugin URI: https://hdwebmobile.com/plugins/hdwebmobile-delivery-date-time-slot/
+ * Plugin URI: https://hdwebmobile.com/plugins/hdwebmobile-checkout-delivery-scheduler/
  * Description: Lets customers pick a delivery date and time slot at checkout, with blocked weekdays and blackout dates. Works correctly on both classic and block-based Checkout.
  * Version: 1.0.0
  * Author: htrxuan - Han Tran
