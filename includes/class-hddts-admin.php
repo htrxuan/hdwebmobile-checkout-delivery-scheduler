@@ -39,7 +39,7 @@ class HDDTS_Admin
     public function render_settings_page()
     {
         ?>
-        <p><?php esc_html_e('Let customers pick a delivery date and time slot at checkout. Works correctly on both classic and block-based Checkout.', 'hdwebmobile-checkout-delivery-scheduler'); ?></p>
+        <p><?php esc_html_e('Let customers pick a delivery date and time slot at checkout. Supports both the classic and block-based Checkout.', 'hdwebmobile-checkout-delivery-scheduler'); ?></p>
         <form method="post" action="options.php">
             <?php
             settings_fields('hddts_option_group');
