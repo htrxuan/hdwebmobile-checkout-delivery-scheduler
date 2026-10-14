@@ -31,6 +31,9 @@ The plugin registers its fields using WooCommerce's own native Checkout Fields A
 * No per-slot capacity limits — every time slot is offered on every valid date regardless of how many orders have already picked it; there's no "this slot is full" cutoff in this version
 * Time slots are a fixed global list, not date-specific — the same slots are offered for every valid date; slots that vary by day of week aren't supported
 
+= Enjoying this plugin? =
+If it helps your site, please consider [leaving an honest review on WordPress.org](https://wordpress.org/support/plugin/hdwebmobile-checkout-delivery-scheduler/reviews/#new-post) -- it helps other WordPress users find it. Found a problem or have an idea? Please [open a support topic](https://wordpress.org/support/plugin/hdwebmobile-checkout-delivery-scheduler/) first so it can be fixed.
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/hdwebmobile-checkout-delivery-scheduler` directory, or install the plugin through the WordPress plugins screen directly.
